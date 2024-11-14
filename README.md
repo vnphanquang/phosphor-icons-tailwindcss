@@ -52,9 +52,11 @@ For example:
 
 ```html
 <p>
-	<i class="ph ph-[info]"></i> <!-- render the regular info icon -->
-	<i class="ph ph-[pulse--duotone]"></i> <!-- render the pulse icon in duotone weight -->
+	<span class="ph ph-[info] text-xl"></span> <!-- render the regular info icon -->
+	<i class="ph ph-[pulse--duotone] text-red-500"></i> <!-- render the pulse icon in duotone weight -->
 </p>
+
+<div class="ph ph-[file-css] h-6 w-6"></div>
 ```
 
 For all available icon names and weight, visit [phosphoricons.com][phosphor].
@@ -76,6 +78,8 @@ The output CSS look something like this:
 .ph-\[info\] {
 	url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSJjdXJyZW50Q29sb3IiPjxwYXRoIGQ9Ik0xMjgsMjRBMTA0LDEwNCwwLDEsMCwyMzIsMTI4LDEwNC4xMSwxMDQuMTEsMCwwLDAsMTI4LDI0Wm0wLDE5MmE4OCw4OCwwLDEsMSw4OC04OEE4OC4xLDg4LjEsMCwwLDEsMTI4LDIxNlptMTYtNDBhOCw4LDAsMCwxLTgsOCwxNiwxNiwwLDAsMS0xNi0xNlYxMjhhOCw4LDAsMCwxLDAtMTYsMTYsMTYsMCwwLDEsMTYsMTZ2NDBBOCw4LDAsMCwxLDE0NCwxNzZaTTExMiw4NGExMiwxMiwwLDEsMSwxMiwxMkExMiwxMiwwLDAsMSwxMTIsODRaIi8+PC9zdmc+);
 }
+
+/* ...truncated... */
 ```
 
 ## Configuration

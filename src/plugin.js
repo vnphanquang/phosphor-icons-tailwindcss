@@ -23,7 +23,7 @@ export default createPlugin.withOptions(
 					maskSize: '100% 100%',
 					maskRepeat: 'no-repeat',
 
-					'&span': {
+					'&:is(span,i)': {
 						display: 'inline-block',
 					},
 				},
