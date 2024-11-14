@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.0.2
+
+### Patch Changes
+
+- [`3d646fb`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/3d646fb4d040bf6feaa37e18d4721994e6c62e2b) Thanks [@vnphanquang](https://github.com/vnphanquang)! - set `inline-block` for `i` tags
+
 ## 1.0.1
 
 ### Patch Changes
