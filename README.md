@@ -104,7 +104,7 @@ Similarly, for Tailwind 4:
 
 ## Why `ph-[info]` and not `ph-info`?
 
-You may notice this library utilizes Tailwind's support for [arbitrary value](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values), i.e `ph-[info]` instead of `ph-info` to map to the regular info icon. This is to avoid unnecessary parsing during development, especially for [Taliwind language server](https://github.com/tailwindlabs/tailwindcss-intellisense). Arbitrary value syntax allows only parsing the icons actually being used. Otherwise, parsing 9000+ icons may cause slow-down that negatively impacts developer experience.
+You may notice this library utilizes Tailwind's support for [arbitrary value](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values), i.e `ph-[info]` instead of `ph-info` to map to the regular info icon. This is to avoid unnecessary parsing during development, especially for [Taliwind language server](https://github.com/tailwindlabs/tailwindcss-intellisense). Arbitrary value syntax allows parsing ad-hoc only the icons actually being used. Otherwise, parsing 9000+ icons may cause slow-down that negatively impacts developer experience.
 
 ## Acknowledgements
 
