@@ -34,6 +34,10 @@ A [TailwindCSS] plugin for the [Phosphor icon set][phosphor].
 	@plugin 'phosphor-icons-tailwindcss';
 	```
 
+> [!IMPORTANT]
+> This package only supports ESM. It should work well in most projects today, especially those using
+> [Vite](https://vitejs.dev/).
+
 ## Usage
 
 You need to add two classes to your markup:
