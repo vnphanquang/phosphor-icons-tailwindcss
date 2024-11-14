@@ -122,5 +122,5 @@ are already using the [iconify](https://iconify.design/) ecosystem in your codeb
 <!-- header badges -->
 [license.badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license]: ./LICENSE
-[npm.badge]: https://img.shields.io/npm/v/phosphor-icons-tailwindcss/qr
-[npm]: https://www.npmjs.com/package/phosphor-icons-tailwindcss/qr
+[npm.badge]: https://img.shields.io/npm/v/phosphor-icons-tailwindcss
+[npm]: https://www.npmjs.com/package/phosphor-icons-tailwindcss
