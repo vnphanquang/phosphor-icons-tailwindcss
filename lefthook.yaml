@@ -1,0 +1,20 @@
+assert_lefthook_installed: true
+min_version: 1.7.18
+pre-commit:
+  piped: true
+  follow: true
+  skip:
+    - merge
+    - rebase
+  commands:
+    1_lint:
+      run: pnpm eslint --fix {staged_files}
+      glob: '*.{js,ts}'
+      stage_fixed: true
+    2_format:
+      run: pnpm prettier --write {staged_files}
+      glob: '*.{js,ts,json,md,yaml}'
+      stage_fixed: true
+      exclude:
+        - pnpm-lock.yaml
+        - README.md
