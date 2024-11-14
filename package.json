@@ -5,7 +5,12 @@
 	"private": true,
 	"type": "module",
 	"main": "src/plugin.js",
-	"module": "src/plugin.js",
+	"exports": {
+		".": {
+			"types": "./src/plugin.d.ts",
+			"import": "./src/plugin.js"
+		}
+	},
 	"types": "src/plugin.d.ts",
 	"publishConfig": {
 		"access": "public",
@@ -36,6 +41,7 @@
 		"url": "git+https://github.com/vnphanquang/phosphor-icons-tailwindcss.git"
 	},
 	"scripts": {
+		"prepublishOnly": "publint",
 		"ci:version": "changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "changeset publish && pnpm install"
 	},
