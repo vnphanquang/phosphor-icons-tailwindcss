@@ -12,6 +12,8 @@ export interface Options {
 	 * CSS custom property for icon URL.
 	 * Default to `--ph-url`
 	 */
+	'custom-property': string;
+	/** alias for 'custom-property' option */
 	customProperty: string;
 }
 

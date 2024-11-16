@@ -8,8 +8,9 @@ const ICON_SET = /** @type {Set<string>} */ (new Set(icons.map((i) => i.name)));
 
 export default createPlugin.withOptions(
 	/** @param {Partial<import('./plugin').Options>} options */
-	function (options) {
-		const { prefix = 'ph', customProperty = '--ph-url' } = options ?? {};
+	function (options = {}) {
+		const prefix = options.prefix ?? 'ph';
+		const customProperty = options['custom-property'] ?? options['customProperty'] ?? '--ph-url';
 
 		return function (api) {
 			api.addComponents({
