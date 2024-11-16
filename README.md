@@ -106,7 +106,7 @@ Similarly, for Tailwind 4:
 @import 'tailwindcss';
 @plugin 'phosphor-icons-tailwindcss' {
 	prefix: ph;
-	customProperty: --ph-url;
+	custom-property: --ph-url; /* use the kebab-case alias to avoid auto-format by stylelint / prettier */
 }
 ```
 
