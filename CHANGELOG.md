@@ -1,5 +1,12 @@
 # phosphor-icons-tailwindcss
 
+## 1.0.3
+
+### Patch Changes
+
+- [`9b18ea8`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/9b18ea8a3ba29a9bc57405ee156aa19042746c00) Thanks [@vnphanquang](https://github.com/vnphanquang)! - allow passing `custom-property` option (alias to `customProperty`) to better match CSS naming
+  convention (helpful to avoid auto-format when used with Tailwind 4 `@plugin` syntax)
+
 ## 1.0.2
 
 ### Patch Changes
