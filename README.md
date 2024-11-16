@@ -42,8 +42,8 @@ A [TailwindCSS] plugin for the [Phosphor icon set][phosphor].
 
 You need to add two classes to your markup:
 
-1. the base `ph` class,
-2. a class with the syntax: `ph-[<name><--weight>]`, corresponding to your desired icon.
+1. the **base** `ph` class,
+2. an **specifier** class with the syntax: `ph-[<name><--weight>]`, corresponding to your desired icon.
 
 > [!NOTE]
 > `weight` is optional and defaults to "regular" if not specified.
@@ -113,6 +113,30 @@ Similarly, for Tailwind 4:
 ## Why `ph-[info]` and not `ph-info`?
 
 You may notice this library utilizes Tailwind's support for [arbitrary value](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values), i.e `ph-[info]` instead of `ph-info` to map to the regular info icon. This is to avoid unnecessary parsing during development, especially for [Taliwind language server](https://github.com/tailwindlabs/tailwindcss-intellisense). Arbitrary value syntax allows parsing ad-hoc only the icons actually being used. Otherwise, parsing 9000+ icons may cause slow-down that negatively impacts developer experience.
+
+## Usage with Tailwind `@apply` directive
+
+You may utilize `@apply` to extend your use case beyond just for icons. This is helpful if you want
+to reuse the icon source in other CSS.
+
+In the following example, `@apply [ph-bell]` makes `--ph-url` available for use:
+
+```css
+/* notification.css */
+.notification {
+	&::before {
+		@apply [ph-bell];
+
+		mask-image: var(--ph-url);
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		background-color: currentcolor;
+	}
+}
+```
+
+> [!NOTE]
+> Note that you should only apply a specifier class, **NOT** the base class.
 
 ## Acknowledgements
 
