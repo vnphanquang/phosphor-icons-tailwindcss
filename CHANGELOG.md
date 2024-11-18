@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.1.1
+
+### Patch Changes
+
+- [`4b65d19`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/4b65d197b5db5070674a763de566773cc9426b30) Thanks [@vnphanquang](https://github.com/vnphanquang)! - bump tailwind 4 peerDependency version and adjust syntax
+
 ## 1.1.0
 
 ### Minor Changes
