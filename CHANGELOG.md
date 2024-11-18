@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.1.0
+
+### Minor Changes
+
+- [`e0ef804`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/e0ef80460827064e95c30f06149ab380b8f994d1) Thanks [@vnphanquang](https://github.com/vnphanquang)! - support adding rules to CSS layer, default to `icons`
+
 ## 1.0.3
 
 ### Patch Changes
