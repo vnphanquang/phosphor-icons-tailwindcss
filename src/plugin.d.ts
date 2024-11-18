@@ -8,6 +8,14 @@ export interface Options {
 	 * ```
 	 */
 	prefix: string;
+	/**
+	 * The layer to output CSS rules into.
+	 * Default to `icons`.
+	 * Set to null skip layering.
+	 *
+	 * Note: The base class will be output to the sub-layer `.base`
+	 */
+	layer: string | null;
 	/*
 	 * CSS custom property for icon URL.
 	 * Default to `--ph-url`

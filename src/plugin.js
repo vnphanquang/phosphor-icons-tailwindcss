@@ -11,26 +11,37 @@ export default createPlugin.withOptions(
 	function (options = {}) {
 		const prefix = options.prefix ?? 'ph';
 		const customProperty = options['custom-property'] ?? options['customProperty'] ?? '--ph-url';
+		let layer = options.layer;
+		if (layer === undefined) layer = 'icons';
 
 		return function (api) {
-			api.addComponents({
-				[`.${prefix}`]: {
-					[customProperty]: 'none',
-					width: '1em',
-					height: '1em',
-					backgroundColor: 'currentcolor',
-					color: 'inherit',
-					maskImage: `var(${customProperty})`,
-					maskSize: '100% 100%',
-					maskRepeat: 'no-repeat',
+			const declarations = {
+				[customProperty]: 'none',
+				width: '1em',
+				height: '1em',
+				backgroundColor: 'currentcolor',
+				color: 'inherit',
+				maskImage: `var(${customProperty})`,
+				maskSize: '100% 100%',
+				maskRepeat: 'no-repeat',
 
-					'&:is(span,i)': {
-						display: 'inline-block',
-					},
+				'&:is(span,i)': {
+					display: 'inline-block',
 				},
-			});
+			};
+			if (layer) {
+				api.addUtilities({
+					[`.${prefix}`]: {
+						[`@layer ${layer}.base`]: declarations,
+					},
+				});
+			} else {
+				api.addUtilities({
+					[`.${prefix}`]: declarations,
+				});
+			}
 
-			api.matchComponents({
+			api.matchUtilities({
 				[prefix]: (icon) => {
 					// syntax: <name>[--weight]
 					let [name = '', weight = 'regular'] = icon.split('--');
@@ -52,9 +63,17 @@ export default createPlugin.withOptions(
 						}
 					}
 
-					return {
+					const declarations = {
 						[customProperty]: url,
 					};
+
+					if (layer) {
+						return {
+							[`@layer ${layer}`]: declarations,
+						};
+					}
+
+					return declarations;
 				},
 			});
 		};
