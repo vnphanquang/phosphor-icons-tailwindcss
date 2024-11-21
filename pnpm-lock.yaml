@@ -11,6 +11,9 @@ importers:
       '@phosphor-icons/core':
         specifier: ^2.1.1
         version: 2.1.1
+      import-meta-resolve:
+        specifier: ^4.1.0
+        version: 4.1.0
       tailwindcss:
         specifier: '>=3.4.14 || >=4.0.0-alpha.34'
         version: 3.4.14
@@ -30,9 +33,6 @@ importers:
       eslint:
         specifier: ^9.14.0
         version: 9.14.0(jiti@1.21.6)
-      import-meta-resolve:
-        specifier: ^4.1.0
-        version: 4.1.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3

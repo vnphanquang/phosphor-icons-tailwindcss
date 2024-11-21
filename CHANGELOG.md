@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.1.2
+
+### Patch Changes
+
+- [`57b0b75`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/57b0b754eefde45876af22c90f92eb448cc2e890) Thanks [@vnphanquang](https://github.com/vnphanquang)! - polyfill `import.meta.resolve` to better support older Node versions and Tailwind v3
+
 ## 1.1.1
 
 ### Patch Changes
