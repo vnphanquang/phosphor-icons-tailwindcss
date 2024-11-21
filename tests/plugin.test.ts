@@ -16,7 +16,7 @@ interface Run {
 }
 
 function tests(run: Run, version: number) {
-	test('default', async function () {
+	test('default', async function ({ expect }) {
 		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[info]']);
 		await expect(result).toMatchFileSnapshot(
 			path.resolve(__dirname, '__snapshots__', `v${version}/default.css`),
@@ -117,10 +117,10 @@ describe('v4', function () {
 			for (const [key, value] of Object.entries(options)) {
 				config += `${key}: ${value};\n`;
 			}
-			cssPlugin = css`
+			cssPlugin = `
 				@plugin 'phosphor-icons-tailwindcss' {
 					${config}
-				}
+				};
 			`;
 		}
 
