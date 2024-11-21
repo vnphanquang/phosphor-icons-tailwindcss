@@ -1,0 +1,11 @@
+@base {
+	@theme default {
+		--spacing: 0.25rem;
+	}
+}
+
+@layer utilities {
+	@tailwind utilities;
+}
+
+@plugin 'phosphor-icons-tailwindcss';

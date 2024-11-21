@@ -41,8 +41,11 @@ jobs:
       - name: Lint
         run: 'pnpm lint'
 
-      - name: Run Tests
-        run: 'pnpm ci:test'
+      - name: Run Integrations Tests
+        run: 'pnpm ci:test:integrations'
+
+      - name: Run Unit Tests
+        run: 'pnpm ci:test:units'
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4

@@ -44,7 +44,8 @@
 		"prepublishOnly": "publint",
 		"lint": "eslint src/**/*",
 		"test": "vitest --coverage",
-		"ci:test": "vitest run --coverage",
+		"ci:test:units": "vitest run plugin --coverage",
+		"ci:test:integrations": "vitest run vite",
 		"ci:version": "changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "changeset publish && pnpm install"
 	},
@@ -53,12 +54,12 @@
 		"import-meta-resolve": "^4.1.0"
 	},
 	"peerDependencies": {
-		"tailwindcss": ">=3.4.14 || >=4.0.0-alpha.36"
+		"tailwindcss": ">=3.4.14 || >=4.0.0-beta.1"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.9",
-		"@tailwindcss/node": "4.0.0-alpha.36",
+		"@tailwindcss/node": "4.0.0-beta.1",
 		"@types/node": "^22.9.0",
 		"@vitest/coverage-istanbul": "2.1.5",
 		"@vitest/ui": "^2.1.5",
@@ -70,6 +71,7 @@
 		"tailwindcss": "4.0.0-alpha.36",
 		"tailwindcssv3": "npm:tailwindcss@3.4.14",
 		"typescript": "^5.6.3",
+		"vite": "^5.4.11",
 		"vitest": "^2.1.5"
 	},
 	"packageManager": "pnpm@9.12.0",
