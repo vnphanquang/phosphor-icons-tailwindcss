@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'fs';
+import fs from 'fs';
 
 import { icons } from '@phosphor-icons/core';
 import { resolve } from 'import-meta-resolve';
@@ -51,16 +51,15 @@ export default createPlugin.withOptions(
 
 					let url = 'icon-not-found';
 					if (ICON_SET.has(name) && VARIANTS.includes(weight)) {
-						const fileUrl = new URL(
+						let fileUrl = new URL(
 							resolve(
 								`@phosphor-icons/core/assets/${weight}/${name}${weight === 'regular' ? '' : `-${weight}`}.svg`,
 								import.meta.url,
 							),
 						);
-						const path = fileUrl.pathname;
 
-						if (existsSync(path)) {
-							const svgStr = readFileSync(path, { encoding: 'base64' });
+						if (fs.existsSync(fileUrl)) {
+							const svgStr = fs.readFileSync(fileUrl, { encoding: 'base64' });
 							url = `url(data:image/svg+xml;base64,${svgStr})`;
 						}
 					}

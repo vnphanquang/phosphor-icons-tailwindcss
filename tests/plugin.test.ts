@@ -19,7 +19,7 @@ function tests(run: Run, version: number) {
 	test('default', async function ({ expect }) {
 		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[info]']);
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/default.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/default.css`),
 		);
 	});
 
@@ -28,7 +28,7 @@ function tests(run: Run, version: number) {
 			prefix: 'i',
 		});
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/custom-prefix.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-prefix.css`),
 		);
 	});
 
@@ -37,7 +37,7 @@ function tests(run: Run, version: number) {
 			layer: null,
 		});
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/no-layer.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/no-layer.css`),
 		);
 	});
 
@@ -46,7 +46,7 @@ function tests(run: Run, version: number) {
 			layer: 'custom',
 		});
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/custom-layer.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-layer.css`),
 		);
 	});
 
@@ -55,7 +55,7 @@ function tests(run: Run, version: number) {
 			'custom-property': '--icon-url',
 		});
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/custom-property.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-property.css`),
 		);
 	});
 
@@ -64,21 +64,21 @@ function tests(run: Run, version: number) {
 			customProperty: '--icon-url',
 		});
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/custom-property.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-property.css`),
 		);
 	});
 
 	test('no icon found', async function () {
 		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[404]']);
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/no-icon-found.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/no-icon-found.css`),
 		);
 	});
 
 	test('no icon name', async function () {
 		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[]']);
 		await expect(result).toMatchFileSnapshot(
-			path.resolve(__dirname, '__snapshots__', `v${version}/no-icon-name.css`),
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/no-icon-name.css`),
 		);
 	});
 
@@ -87,7 +87,7 @@ function tests(run: Run, version: number) {
 			test(`weight:${weight}`, async function () {
 				const result = await run([...COMMON_CANDIDATES, 'ph', `ph-[info--${weight}]`]);
 				await expect(result).toMatchFileSnapshot(
-					path.resolve(__dirname, `__snapshots__`, `v${version}/weight-${weight}.css`),
+					path.resolve(import.meta.dirname, `__snapshots__`, `v${version}/weight-${weight}.css`),
 				);
 			});
 		}
@@ -107,8 +107,6 @@ describe('v4', function () {
 				@tailwind utilities;
 			}
 		`;
-		const { currentTestName } = expect.getState();
-
 		let cssPlugin = css`
 			@plugin 'phosphor-icons-tailwindcss';
 		`;
@@ -123,9 +121,8 @@ describe('v4', function () {
 				};
 			`;
 		}
-
 		const { build } = await compile(cssEntry + cssPlugin, {
-			base: `${path.resolve(__filename)}?test=${currentTestName}`,
+			base: `${path.resolve(import.meta.url, '..')}`,
 			onDependency: () => {},
 			shouldRewriteUrls: true,
 			...({
@@ -156,7 +153,7 @@ describe('v3', async function () {
 		} satisfies import('tailwindcssv3').Config;
 
 		const { css } = await postcss(tailwindcss(config)).process(cssEntry, {
-			from: `${path.resolve(__filename)}?test=${currentTestName}`,
+			from: `${path.resolve(import.meta.url)}?test=${currentTestName}`,
 		});
 		return css;
 	};
