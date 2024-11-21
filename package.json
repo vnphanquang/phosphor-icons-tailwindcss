@@ -7,7 +7,8 @@
 	"exports": {
 		".": {
 			"types": "./src/plugin.d.ts",
-			"import": "./src/plugin.js"
+			"import": "./src/plugin.js",
+			"default": "./src/plugin.js"
 		}
 	},
 	"types": "src/plugin.d.ts",
@@ -45,7 +46,8 @@
 		"ci:publish": "changeset publish && pnpm install"
 	},
 	"dependencies": {
-		"@phosphor-icons/core": "^2.1.1"
+		"@phosphor-icons/core": "^2.1.1",
+		"import-meta-resolve": "^4.1.0"
 	},
 	"peerDependencies": {
 		"tailwindcss": ">=3.4.14 || >=4.0.0-alpha.34"

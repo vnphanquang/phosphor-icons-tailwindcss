@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'fs';
 
 import { icons } from '@phosphor-icons/core';
+import { resolve } from 'import-meta-resolve';
 import createPlugin from 'tailwindcss/plugin.js';
 
 const VARIANTS = ['thin', 'light', 'regular', 'bold', 'fill', 'duotone'];
@@ -51,8 +52,9 @@ export default createPlugin.withOptions(
 					let url = 'icon-not-found';
 					if (ICON_SET.has(name) && VARIANTS.includes(weight)) {
 						const fileUrl = new URL(
-							import.meta.resolve(
+							resolve(
 								`@phosphor-icons/core/assets/${weight}/${name}${weight === 'regular' ? '' : `-${weight}`}.svg`,
+								import.meta.url,
 							),
 						);
 						const path = fileUrl.pathname;
