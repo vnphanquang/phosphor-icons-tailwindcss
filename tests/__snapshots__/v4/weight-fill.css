@@ -1,0 +1,34 @@
+/*! tailwindcss v4.0.0-alpha.36 | MIT License | https://tailwindcss.com */
+@base {
+  :root {
+    --spacing: 0.25rem;
+  }
+}
+@layer utilities {
+  .ph {
+    @layer icons.base {
+      --ph-url: none;
+      width: 1em;
+      height: 1em;
+      background-color: currentcolor;
+      color: inherit;
+      mask-image: var(--ph-url);
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      &:is(span,i) {
+        display: inline-block;
+      }
+    }
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .ph-\[info--fill\] {
+    @layer icons {
+      --ph-url: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSJjdXJyZW50Q29sb3IiPjxwYXRoIGQ9Ik0xMjgsMjRBMTA0LDEwNCwwLDEsMCwyMzIsMTI4LDEwNC4xMSwxMDQuMTEsMCwwLDAsMTI4LDI0Wm0tNCw0OGExMiwxMiwwLDEsMS0xMiwxMkExMiwxMiwwLDAsMSwxMjQsNzJabTEyLDExMmExNiwxNiwwLDAsMS0xNi0xNlYxMjhhOCw4LDAsMCwxLDAtMTYsMTYsMTYsMCwwLDEsMTYsMTZ2NDBhOCw4LDAsMCwxLDAsMTZaIi8+PC9zdmc+);
+    }
+  }
+}

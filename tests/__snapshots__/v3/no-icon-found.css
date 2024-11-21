@@ -1,0 +1,27 @@
+.h-4 {
+    height: 1rem
+}
+.w-4 {
+    width: 1rem
+}
+@layer icons.base {
+    .ph {
+        --ph-url: none;
+        width: 1em;
+        height: 1em;
+        background-color: currentcolor;
+        color: inherit;
+        mask-image: var(--ph-url);
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat
+    }
+    .ph:is(span,i) {
+        display: inline-block
+    }
+}
+@layer icons {
+    .ph-\[404\] {
+        --ph-url: icon-not-found
+    }
+}
+	
