@@ -1,0 +1,54 @@
+name: Tests
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/tests.yaml'
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CI: true
+jobs:
+  Test:
+    if: github.repository == 'vnphanquang/phosphor-icons-tailwindcss' # prevents this action from running on forks
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
+
+      - name: Lint
+        run: 'pnpm lint'
+
+      - name: Run Tests
+        run: 'pnpm ci:test'
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          os: ${{ matrix.os }}
+          files: ./coverage/lcov.info
+          fail_ci_if_error: true
+          flags: unittests, ${{ matrix.os }}
+          token: ${{ secrets.CODECOV_TOKEN }}

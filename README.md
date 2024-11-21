@@ -4,7 +4,7 @@
 
 A [TailwindCSS] plugin for the [Phosphor icon set][phosphor].
 
-[![MIT][license.badge]][license] [![npm.badge]][npm]
+[![MIT][license.badge]][license] [![npm.badge]][npm] [![codecov][codecov.badge]][codecov]
 
 ## Installation
 
@@ -188,3 +188,6 @@ are already using the [iconify](https://iconify.design/) ecosystem in your codeb
 [license]: ./LICENSE
 [npm.badge]: https://img.shields.io/npm/v/phosphor-icons-tailwindcss
 [npm]: https://www.npmjs.com/package/phosphor-icons-tailwindcss
+[codecov]: https://codecov.io/github/vnphanquang/phosphor-icons-tailwindcss
+[codecov.badge]: https://codecov.io/github/vnphanquang/phosphor-icons-tailwindcss/graph/badge.svg?token=dKkYUy4evr
+
