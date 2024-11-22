@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- [`f68bea6`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/f68bea6502a7a310a1753153453c34dadf384c9f) Thanks [@vnphanquang](https://github.com/vnphanquang)! - switch to `path/posix` implementation to support Windows
+- [`f68bea6`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/f68bea6502a7a310a1753153453c34dadf384c9f) Thanks [@vnphanquang](https://github.com/vnphanquang)! - support windows
 
 ## 1.1.2
 
