@@ -44,7 +44,7 @@
 		"prepublishOnly": "publint",
 		"lint": "eslint src/**/*",
 		"test": "vitest --coverage",
-		"ci:test:units": "vitest run plugin --coverage",
+		"ci:test:units": "vitest run plugin --coverage --reporter=junit --outputFile=./coverage/junit.xml",
 		"ci:test:integrations": "vitest run vite",
 		"ci:version": "changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "changeset publish && pnpm install"
