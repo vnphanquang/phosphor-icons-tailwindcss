@@ -97,7 +97,7 @@ function tests(run: Run, version: number) {
 describe('v4', function () {
 	const run: Run = async (candidates, options) => {
 		const cssEntry = css`
-			@base {
+			@layer base {
 				@theme default {
 					--spacing: 0.25rem;
 				}
