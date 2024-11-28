@@ -51,15 +51,15 @@ export default createPlugin.withOptions(
 
 					let url = 'icon-not-found';
 					if (ICON_SET.has(name) && VARIANTS.includes(weight)) {
-						let fileUrl = new URL(
+						let filepath = new URL(
 							resolve(
 								`@phosphor-icons/core/assets/${weight}/${name}${weight === 'regular' ? '' : `-${weight}`}.svg`,
 								import.meta.url,
 							),
 						);
 
-						if (fs.existsSync(fileUrl)) {
-							const svgStr = fs.readFileSync(fileUrl, { encoding: 'base64' });
+						if (fs.existsSync(filepath)) {
+							const svgStr = fs.readFileSync(filepath, { encoding: 'base64' });
 							url = `url(data:image/svg+xml;base64,${svgStr})`;
 						}
 					}

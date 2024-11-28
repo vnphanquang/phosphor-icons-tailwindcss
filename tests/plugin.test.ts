@@ -122,7 +122,7 @@ describe('v4', function () {
 			`;
 		}
 		const { build } = await compile(cssEntry + cssPlugin, {
-			base: `${path.resolve(import.meta.url, '..')}`,
+			base: path.resolve(import.meta.url, '..'),
 			onDependency: () => {},
 			shouldRewriteUrls: true,
 			...({

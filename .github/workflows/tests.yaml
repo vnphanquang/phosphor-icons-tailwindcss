@@ -62,7 +62,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           fail_ci_if_error: true
-          files: ./coverage/lcov.info, ./coverage/junit.xml
+          files: ./coverage/lcov.info
           flags: unittests, ${{ runner.os }}
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true

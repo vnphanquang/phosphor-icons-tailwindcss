@@ -2,7 +2,7 @@
 	"name": "integration-test-vite-v4",
 	"type": "module",
 	"devDependencies": {
-		"@tailwindcss/vite": "4.0.0-beta.1",
+		"@tailwindcss/vite": "4.0.0-beta.3",
 		"phosphor-icons-tailwindcss": "workspace:*"
 	}
 }
