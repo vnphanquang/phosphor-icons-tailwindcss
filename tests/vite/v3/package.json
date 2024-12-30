@@ -1,6 +1,7 @@
 {
 	"name": "integration-test-vite-v3",
 	"type": "module",
+	"private": true,
 	"devDependencies": {
 		"phosphor-icons-tailwindcss": "workspace:*"
 	}
