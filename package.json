@@ -1,6 +1,6 @@
 {
 	"name": "phosphor-icons-tailwindcss",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Tailwind plugin for Phoshor icon set in pure CSS",
 	"type": "module",
 	"main": "src/plugin.js",

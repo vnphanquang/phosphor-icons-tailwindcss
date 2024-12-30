@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.2.1
+
+### Patch Changes
+
+- [`0f94f7a`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/0f94f7abbadad51f32fa9b9a1b7d72e1f28d0bdf) Thanks [@vnphanquang](https://github.com/vnphanquang)! - add `defaultWeight` / `default-weight` option to README
+
 ## 1.2.0
 
 ### Minor Changes
