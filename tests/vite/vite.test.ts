@@ -1,5 +1,6 @@
 import path from 'path';
 
+import { format } from 'prettier';
 import { build, Rollup } from 'vite';
 import { test, expect } from 'vitest';
 
@@ -10,7 +11,7 @@ import { test, expect } from 'vitest';
 		})) as Rollup.RollupOutput;
 		const css = (output.find((c) => c.name === 'index.css') as Rollup.OutputAsset)?.source;
 
-		await expect(css).toMatchFileSnapshot(
+		await expect(await format(css.toString(), { parser: 'css' })).toMatchFileSnapshot(
 			path.resolve(import.meta.dirname, '__snapshots__', `${version}.css`),
 		);
 	});
