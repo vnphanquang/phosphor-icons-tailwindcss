@@ -46,7 +46,7 @@ You need to add two classes to your markup:
 2. an **specifier** class with the syntax: `ph-[<name><--weight>]`, corresponding to your desired icon.
 
 > [!NOTE]
-> `weight` is optional and defaults to "regular" if not specified.
+> `weight` is optional and defaults to `defaultWeight` config option, or "regular" if not specified.
 
 For example:
 
@@ -101,6 +101,7 @@ export default {
 		prefix: 'ph', // for the icon classes
 		layer: 'icons', // for the CSS layer
 		customProperty: '--ph-url',
+		defaultWeight: 'regular',
 	})],
 };
 ```
@@ -113,6 +114,7 @@ Similarly, for Tailwind 4:
 	prefix: ph;
 	layer: icons;
 	custom-property: --ph-url; /* use the kebab-case alias to avoid auto-format by stylelint / prettier */
+	default-weight: regular;
 }
 ```
 
