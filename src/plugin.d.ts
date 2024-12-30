@@ -1,3 +1,5 @@
+export type Weight = 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
+
 export interface Options {
 	/**
 	 * the base icon class. Default to `ph`
@@ -23,6 +25,14 @@ export interface Options {
 	'custom-property': string;
 	/** alias for 'custom-property' option */
 	customProperty: string;
+
+	/**
+	 * The default weight for icons.
+	 * Default to `regular`
+	 */
+	'default-weight': Weight;
+	/** alias for 'default-weight' option */
+	defaultWeight: Weight;
 }
 
 declare function plugin(options?: Partial<Options>): {

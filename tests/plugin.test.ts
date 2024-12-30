@@ -68,6 +68,24 @@ function tests(run: Run, version: number) {
 		);
 	});
 
+	test('custom `default-weight`', async function () {
+		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[info]'], {
+			'default-weight': 'thin',
+		});
+		await expect(result).toMatchFileSnapshot(
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-default-weight.css`),
+		);
+	});
+
+	test('custom `defaultWeight`', async function () {
+		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[info]'], {
+			defaultWeight: 'thin',
+		});
+		await expect(result).toMatchFileSnapshot(
+			path.resolve(import.meta.dirname, '__snapshots__', `v${version}/custom-default-weight.css`),
+		);
+	});
+
 	test('no icon found', async function () {
 		const result = await run([...COMMON_CANDIDATES, 'ph', 'ph-[404]']);
 		await expect(result).toMatchFileSnapshot(

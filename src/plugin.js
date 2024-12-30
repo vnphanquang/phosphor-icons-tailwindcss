@@ -12,6 +12,7 @@ export default createPlugin.withOptions(
 	function (options = {}) {
 		const prefix = options.prefix ?? 'ph';
 		const customProperty = options['custom-property'] ?? options['customProperty'] ?? '--ph-url';
+		const defaultWeight = options['default-weight'] ?? options['defaultWeight'] ?? 'regular';
 		let layer = options.layer;
 		if (layer === undefined) layer = 'icons';
 
@@ -45,7 +46,7 @@ export default createPlugin.withOptions(
 			api.matchUtilities({
 				[prefix]: (icon) => {
 					// syntax: <name>[--weight]
-					let [name = '', weight = 'regular'] = icon.split('--');
+					let [name = '', weight = defaultWeight] = icon.split('--');
 					name = name.trim();
 					weight = weight.trim();
 
