@@ -54,25 +54,25 @@
 		"import-meta-resolve": "^4.1.0"
 	},
 	"peerDependencies": {
-		"tailwindcss": ">=3.4.14 || >=4.0.0-beta.3"
+		"tailwindcss": ">=3.4.14 || >=4.0.0-beta.8"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.5.0",
-		"@changesets/cli": "^2.27.10",
-		"@tailwindcss/node": "4.0.0-beta.3",
-		"@types/node": "^22.9.4",
-		"@vitest/coverage-istanbul": "2.1.5",
-		"@vitest/ui": "^2.1.5",
+		"@changesets/cli": "^2.27.11",
+		"@tailwindcss/node": "4.0.0-beta.8",
+		"@types/node": "^22.10.2",
+		"@vitest/coverage-istanbul": "2.1.8",
+		"@vitest/ui": "^2.1.8",
 		"@vnphanquang/eslint-config": "^3.0.1",
-		"eslint": "^9.15.0",
+		"eslint": "^9.17.0",
 		"postcss": "^8.4.49",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.2",
 		"publint": "^0.2.12",
-		"tailwindcss": "4.0.0-beta.3",
-		"tailwindcssv3": "npm:tailwindcss@3.4.15",
+		"tailwindcss": "4.0.0-beta.8",
+		"tailwindcssv3": "npm:tailwindcss@3.4.17",
 		"typescript": "^5.7.2",
-		"vite": "^5.4.11",
-		"vitest": "^2.1.5"
+		"vite": "^6.0.6",
+		"vitest": "^2.1.8"
 	},
 	"packageManager": "pnpm@9.12.0",
 	"engines": {
