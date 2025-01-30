@@ -1,6 +1,7 @@
-/*! tailwindcss v4.0.0-beta.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.0.1 | MIT License | https://tailwindcss.com */
 @base {
-  :root {
+  :root,
+  :host {
     --spacing: 0.25rem;
   }
 }

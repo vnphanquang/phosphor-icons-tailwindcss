@@ -54,12 +54,12 @@
 		"import-meta-resolve": "^4.1.0"
 	},
 	"peerDependencies": {
-		"tailwindcss": ">=3.4.14 || >=4.0.0-beta.8"
+		"tailwindcss": ">=3.4.14 || >=4.0.0"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.11",
-		"@tailwindcss/node": "4.0.0-beta.8",
+		"@tailwindcss/node": "^4.0.0",
 		"@types/node": "^22.10.2",
 		"@vitest/coverage-istanbul": "2.1.8",
 		"@vitest/ui": "^2.1.8",
@@ -68,7 +68,7 @@
 		"postcss": "^8.4.49",
 		"prettier": "^3.4.2",
 		"publint": "^0.2.12",
-		"tailwindcss": "4.0.0-beta.8",
+		"tailwindcss": "^4.0.0",
 		"tailwindcssv3": "npm:tailwindcss@3.4.17",
 		"typescript": "^5.7.2",
 		"vite": "^6.0.6",
