@@ -1,5 +1,11 @@
 # phosphor-icons-tailwindcss
 
+## 1.2.2
+
+### Patch Changes
+
+- [`797a95f`](https://github.com/vnphanquang/phosphor-icons-tailwindcss/commit/797a95f7e43c740b26eecb7977b54d0f3033c468) Thanks [@vnphanquang](https://github.com/vnphanquang)! - bump tailwindcss version to 4.x
+
 ## 1.2.1
 
 ### Patch Changes
