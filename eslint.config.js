@@ -1,3 +1,7 @@
-import vnphanquang from '@vnphanquang/eslint-config';
+import { fileURLToPath } from 'node:url';
 
-export default vnphanquang;
+import { defineConfig } from '@vnphanquang/eslint-config';
+
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+
+export default defineConfig({ gitignorePath });
