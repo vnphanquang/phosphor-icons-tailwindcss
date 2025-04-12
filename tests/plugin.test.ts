@@ -136,7 +136,7 @@ describe('v4', function () {
 			cssPlugin = `
 				@plugin 'phosphor-icons-tailwindcss' {
 					${config}
-				};
+				}
 			`;
 		}
 		const { build } = await compile(cssEntry + cssPlugin, {
